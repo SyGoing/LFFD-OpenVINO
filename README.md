@@ -21,9 +21,9 @@
   * Next,in this path , by doing "python symbol_10_320_20L_5scales_v2.py	",generate the symbol.json. symbol_10_560_25L_8scales_v1.py do the same thing .
 
  ## Inference time on CPU i7 7700 
- 
+  The time is average time. 
  set the mode CPU. When setting it GPU, it uses the intel graphic gpu
- The time is average time. 
+
 Resolution->|320×240|640×480|1280x720|1920x1080
 ------------|------------|-----------|-----------|------------
  **LFFD**|11.20ms(89.28 FPS)|44.61ms(22.41 FPS)|128.61ms(7.78 FPS)|288.01ms(3.47 FPS)
