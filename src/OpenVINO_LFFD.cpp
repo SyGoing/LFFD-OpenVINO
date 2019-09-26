@@ -77,7 +77,7 @@ LFFD::~LFFD()
 
 }
 
-int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, int resize_h, int resize_w,
+int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, cv::Size input_size,
 	float score_threshold, float nms_threshold, int top_k, std::vector<int> skip_scale_branch_list)
 {
 
@@ -90,9 +90,9 @@ int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, int resize_h, i
 	image_w = img.cols;
 
     cv::Mat in;
-    cv::resize(img,in,cv::Size(resize_w,resize_h));
-    float ratio_w=(float)image_w/ resize_w;
-    float ratio_h=(float)image_h/ resize_h;
+    cv::resize(img,in,input_size);
+    float ratio_w=(float)image_w/ input_size.width;
+    float ratio_h=(float)image_h/ input_size.height;
 
 
 	//resize net input and network
