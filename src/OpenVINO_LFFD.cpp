@@ -129,7 +129,7 @@ int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, int resize_h, i
 		InferenceEngine::Blob::Ptr conf_Blob = request.GetBlob(output_blob_names[2 * i]);
 		InferenceEngine::Blob::Ptr reg_Blob = request.GetBlob(output_blob_names[2 * i + 1]);
 
-		InferenceEngine::SizeVector shape_conf=conf_Blob->dims();  //��ôshape�ǵ��ŵ��� w h c n
+		InferenceEngine::SizeVector shape_conf=conf_Blob->dims();  //ÔõÃ´shapeÊÇµ¹×ÅµÄÄØ w h c n
 		InferenceEngine::SizeVector shape_reg = reg_Blob->dims();
 
 		float * conf_ptr= conf_Blob->buffer().as<InferenceEngine::PrecisionTrait<InferenceEngine::Precision::FP32>::value_type*>();
@@ -244,6 +244,8 @@ void LFFD::generateBBox(std::vector<FaceInfo>& bbox_collection, float* score_map
 
 	delete[] RF_center_Xs; RF_center_Xs = NULL;
 	delete[] RF_center_Ys; RF_center_Ys = NULL;
+	delete[] RF_center_Xs_mat; RF_center_Xs_mat = NULL;
+	delete[] RF_center_Ys_mat; RF_center_Ys_mat = NULL;
 	delete[] x_lt_mat; x_lt_mat = NULL;
 	delete[] y_lt_mat; y_lt_mat = NULL;
 	delete[] x_rb_mat; x_rb_mat = NULL;
