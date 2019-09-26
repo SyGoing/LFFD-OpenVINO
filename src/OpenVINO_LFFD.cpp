@@ -96,8 +96,8 @@ int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, cv::Size input_
 
 
 	//resize net input and network
-	if (resize_h != inputLayerSize.height ||
-		resize_w != inputLayerSize.width) {
+	if (input_size.height != inputLayerSize.height ||
+		input_size.width != inputLayerSize.width) {
 
 		inputLayerSize.height = input_size.height;
 		inputLayerSize.width=   input_size.width;
