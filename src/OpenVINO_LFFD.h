@@ -27,7 +27,7 @@ public:
 		int scale_num=8,bool  enablePerformanceReport_=false);
 	~LFFD();
 
-	int detect(cv::Mat& img, std::vector<FaceInfo>& face_lis,int resize_h=480,int resize_w=640,
+	int detect(cv::Mat& img, std::vector<FaceInfo>& face_lis,cv::Size resized_size,
 		float score_threshold = 0.6, float nms_threshold = 0.4, int top_k = 10000,
 		std::vector<int> skip_scale_branch_list = {});
 
