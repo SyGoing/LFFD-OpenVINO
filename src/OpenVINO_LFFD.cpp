@@ -99,8 +99,8 @@ int LFFD::detect(cv::Mat& img, std::vector<FaceInfo>& face_list, cv::Size input_
 	if (resize_h != inputLayerSize.height ||
 		resize_w != inputLayerSize.width) {
 
-		inputLayerSize.height = resize_h;
-		inputLayerSize.width=   resize_w;
+		inputLayerSize.height = input_size.height;
+		inputLayerSize.width=   input_size.width;
 
 		auto input_shapes = network.getInputShapes();
 		std::string input_name;
