@@ -10,6 +10,9 @@
   MNN implementation is [here](https://github.com/SyGoing/LFFD-MNN)
   
 ## Prerequirements
+  openvino's version: openvino_2019.1.148
+  opencv ,I used opencv3.4.3
+
   Please refer the official OPenVINO‘s [DOC](https://software.intel.com/en-us/openvino-toolkit/documentation/get-started) to install openvino.
   In that documentation, you will find how to convert the official mxnet model to openvino. 
   And,before you convert the mxnet model ,you need to modify the symbol.json as follows:
