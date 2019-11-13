@@ -41,7 +41,7 @@ private:
 	void get_topk_bbox(std::vector<FaceInfo>& input, std::vector<FaceInfo>& output, int topk);
 
 	void nms(std::vector<FaceInfo>& input, std::vector<FaceInfo>& output,
-		float threshold, int type = NMS_UNION);
+		float threshold, int type = NMS_MIN);
 private:
 	std::string modelPath;
 	bool enablePerformanceReport;
